@@ -171,11 +171,3 @@ If no initial/continuation section headers are detected in the text (common for 
 - **Rate limiting**: 1.5s delay between PDF downloads, 3s delay between LLM calls. The Groq SDK also handles 429 responses with automatic retry and exponential backoff.
 
 ---
-
-### What We'll Cover in the 30-Minute Q&A
-
-- How PDF discovery completeness is ensured by parsing `__NEXT_DATA__` (covers all three page sections: Upcoming Changes, Medical Guidelines, Adopted Guidelines).
-- Retry (3 attempts with exponential backoff via tenacity), throttling (1.5s between requests), and idempotency (unique constraints, skip-if-exists checks).
-- The two-layer initial-only logic, its heuristic pre-filter patterns, and known failure modes.
-- Pydantic schema validation of LLM output, JSON mode enforcement, and how validation errors are persisted.
-- Recursive `CriteriaTree` React component with per-node expand/collapse state and color-coded AND/OR operator badges.
